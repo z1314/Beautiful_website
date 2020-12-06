@@ -9,3 +9,404 @@
 设计稿中下方导师介绍图片，左上角灰色底表示，鼠标hover到图片上时的效果变化。
 不需要考虑兼容IE浏览器
  -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>beautiful website</title>
+     <style>
+         *{
+             margin:0;
+             padding: 0;
+         }
+         .setup{
+            padding: 0 20%;
+            border-bottom: 1px solid gray;
+             /* box-sizing: border-box; */
+             height: 500px;
+             /* padding-top: 100px; */
+             background-image: url('./images/10.png');
+             background-size: cover;
+             overflow: hidden;
+             
+         }
+         .setup >p:nth-child(1){
+            margin-top: 100px;
+            font-size: 40px;
+            text-align: center;
+           color:white;
+         }
+         .setup >p:nth-child(2){
+            font-size: 15px;
+            text-align: center;
+            margin-top: 50px;
+            color:darkgray;
+        }
+         .setup form{
+             /* width:500px; */
+             /* height:120px; */
+             margin: 50px auto 0 auto;
+             padding-bottom: 20px;
+             /* margin-top: 50px; */
+             border: 1px solid darkgray;
+             overflow: hidden;
+         }
+         .setup >form p:nth-child(1){
+            font-size: 20px;
+            text-align: center;
+            color:white;
+            margin-top: 10px;
+         }
+         .setup >form p:nth-child(2){
+             margin-top: 10px;
+            font-size: 15px;
+            text-align: center;
+            color:darkgray;
+         }
+         .setup >form p:nth-child(3){
+             margin-top: 15px;
+         }
+         .input1{
+             /* width: 160px; */
+             height: 20px;
+             margin: 0 5%;
+             border: 1px solid darkgray;
+             background-color: inherit;
+         }
+         .input1::placeholder{
+             color: darkgray;   
+         }
+         .input1::-moz-placeholder{
+             color:white;
+         }
+         .input1::-webkit-input-placeholder{
+            color: white;
+            text-align: center;
+         }
+         .input2{ 
+            /* width: 160px; */
+             height: 20px;
+             border: 1px solid darkgray;
+             background-color: inherit;
+         }
+         .input2::placeholder{
+             color: darkgray;   
+         }
+         .input2::-moz-placeholder{
+             color:darkgray;
+         }
+         .input2::-webkit-input-placeholder{
+            color: darkgray;
+            text-align: center;
+         }
+         .scinup{
+             display: inline-block;
+             height: 20px;
+             line-height: 20px;
+             /* width: 10px; */
+             margin-left: 5%;
+             font-size: 10px;
+             background-color: white;
+             vertical-align: bottom;
+             padding: 0 5px;
+         }
+         .content_one{
+            padding: 0 20%;
+            border-bottom: 1px solid gray;
+             height:450px;
+             background-color: white;
+             overflow: hidden;
+         }
+         .content_one >p:nth-child(1){
+            color: black;
+            font-size: 12px;
+            margin-top: 30px;
+            text-align: center;
+         }
+         .content_one >p:nth-child(2){
+            color: black;
+            font-size: 30px;
+            margin-top: 20px;
+            text-align: center;
+         }
+         .container{
+             margin-top: 45px;
+             width: 100%;
+             height: 250px;
+             position: relative;
+         }
+         .top_left{
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 50%;
+             height: 50%;
+             /* background-color: red; */
+         }
+         .top_right{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+             height: 50%;
+         }
+         .bottom_left{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+             height: 50%;
+         }
+         .bottom_right{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 50%;
+            /* background-color: red; */
+         }
+         .container_img{
+             float: left;
+             position: relative;
+             width: 30%;
+             height: 100%;
+             /* overflow: hidden; */
+         }
+         .container_img >img{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 50%;
+            margin-top: -50px;
+            left: 50%;
+            margin-left: -30px;
+         }
+        
+         .content_two{
+            padding: 0 0 0 20%;
+            border-bottom: 1px solid gray;
+             height: 400px;
+             /* padding: 0 0 0 20%; */
+             background-image: url('./images/11.png');
+             background-size: cover;
+             overflow: hidden;
+         }
+         .two_left{
+             float: left;
+             width: 55%;
+             height: 100%;
+             padding: 80px 0;
+             /* background-color: red; */
+         }
+         .two_right{
+             float: right;
+             width: 45%;
+             height: 100%;
+             padding: 50px 0;
+             /* background-color: blue; */
+             
+         }
+         .two_left >p:nth-child(1){
+             font-size: 35px;
+             color: white;
+         }
+         .two_left >p:nth-child(2){
+             font-size: 20px;
+             color: gray;
+             margin-top: 10px;
+         }
+         .two_left_span{
+            margin-top: 20px;
+         }
+         .two_left_span >span:nth-child(1){
+             display: inline-block;
+             height: 30px;
+             width: 190px;
+             line-height: 30px;
+             text-align: center;
+             background-color: white;
+             color: black;
+         }
+         .two_left_span >span:nth-child(2){
+            display: inline-block;
+             height: 28px;
+             width: 190px;
+             line-height: 30px;
+             text-align: center;
+             background-color: inherit;
+             color: white;
+             border: 1px solid gray;
+             margin-left: 30px;
+             vertical-align: bottom;
+         }
+         .two_wrap{
+             width: 100%;
+             height: calc(100% - 100px);
+             border: 1px solid gray;
+             border-top-left-radius: 10%;
+             border-bottom-left-radius: 10%;
+            padding: 10px 0 10px 30px;
+         }
+         .two_right_content{
+             width: 100%;
+             height: 100%;
+             background-color: white;
+             overflow: hidden;
+         }
+         .two_right_content >p:nth-child(1){
+             font-weight: bold;
+             color: black;
+             text-align: center;
+             margin-top: 15px;
+         }
+         .two_right_content >p:nth-child(2){
+             color: gray;
+             text-align: center;
+             margin-top: 15px;
+         }
+         .two_right_flex{
+             display: flex;
+             flex-direction: row;
+             justify-content:space-around;
+             margin-top: 40px;
+         }
+         .two_right_flex img{
+             height: 80px;
+             width: 100px;
+         }
+         .two_right-flex_title >p:nth-child(2){
+             font-size: 20px;
+             font-weight: bold;
+             color: black;
+         }
+         .two_right-flex_title >p:nth-child(3){
+             font-size: 15px;
+             color: gray;
+         }
+
+         .content_there{
+            padding: 0 20%;
+            border-bottom: 1px solid gray;
+             height: 300px;
+             background-color: white;
+         }
+         .content_four{
+            padding: 0 20%;
+            border-bottom: 1px solid gray;
+             height: 600px;
+             background-color: white;
+         }
+         .content_five{
+            padding: 0 20%;
+            border-bottom: 1px solid gray;
+            height: 600px;
+            background-color: white;
+         }
+         .content_six{
+            padding: 0 20%;
+            border-bottom: 1px solid gray;
+            height: 500px;
+            background-color: white;
+         }
+         footer{
+            padding: 0 20%;
+            border-bottom: 1px solid gray;
+            padding: 0 20%;
+            height: 300px;
+             background-color: black;
+         }
+     </style>
+ </head>
+ <body>
+     <div class="main">
+         <!-- setup模块 -->
+        <div class="setup">
+            <p>Hello World</p>
+            <p>China is speeding up strategic plan,standards,traffic rules,laws and regulations on accedent-incurred liabilities for its smart car industry.Economic information Daily reported Thursday.</p>
+            <form action="">
+                <p>CREATE YOUR ACCOUNT</p>
+                <p>IT IS ABSULUTELY FREE</p>
+                <p><input class="input1" type="text" placeholder="denis@getcraftwork.com"><input class="input2" type="text" placeholder="Create your password"><span class="scinup">SICN UP</span></p>
+
+            </form>
+        </div>
+        <!-- content_one模块 -->
+        <div class="content_one">
+            <p>BOATLOADS OF AWESOME</p>
+            <p>Ready-made,customizable.HTML landing page sections</p>
+            <div class="container">
+                <!-- 13.png -->
+                <div class="top_left">
+                    <div class="container_img"><img src="./images/13.png" alt="#"></div>
+                    <p class="container_hidden">
+                        <p>one in a pig and  skdjfjk sdfkjlsk a dog a dkjdf;kj sakdjf dkjfj  cat sdjj</p>
+                        <p>two</p>
+                    </p>
+                </div>
+                <div class="top_right">
+                    <div class="container_img"><img src="./images/13.png" alt="#"></div>
+                    <p class="container_hidden">
+                        <p>one</p>
+                        <p>two</p>
+                    </p>
+                </div>
+                <div class="bottom_left">
+                    <div class="container_img"><img src="./images/13.png" alt="#"></div>
+                    <p class="container_hidden">
+                        <p>one</p>
+                        <p>two</p>
+                    </p>
+                </div>
+                <div class="bottom_right">
+                    <div class="container_img"><img src="./images/13.png" alt="#"></div>
+                    <p class="container_hidden">
+                        <p>one</p>
+                        <p>two</p>
+                    </p>
+                </div>
+            
+            </div>
+        </div>
+        <!-- content_two模块 -->
+        <div class="content_two">
+            <div class="two_left">
+                <p>Supportive policies for China`s smart car</p>
+                <p>China will come up with its own smart car standards rules,laws and regulations relating to safety.according to the China ksdjfk</p>
+                <p class="two_left_span"><span>CHECK OUT FEATURES</span><span>TRT PRODUCT FOR FREE</span></p>
+            </div>
+            <div class="two_right">
+                <div class="two_wrap">
+                    <div class="two_right_content">
+                        <p><b>资料</b></p>
+                        <p>这里有一些教程、文档或示例。可以帮助你学习</p>
+                        <div class="two_right_flex">
+                            <div class="two_right-flex_title">
+                                <img src="./images/16.png" alt="#">
+                                <p>教程</p>
+                                <p>加上一些说明</p>
+                            </div>
+                            <div class="two_right-flex_title">
+                                <img src="./images/17.png" alt="#">
+                                <p>指南</p>
+                                <p>加上一些说明</p>
+                            </div>
+                            <div class="two_right-flex_title">
+                                <img src="./images/15.png" alt="#">
+                                <p>示例</p>
+                                <p>加上一些说明</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content_there"></div>
+        <div class="content_four"></div>
+        <div class="content_five"></div>
+        <div class="content_six"></div>
+        <footer></footer>
+     </div>
+ </body>
+ </html>
